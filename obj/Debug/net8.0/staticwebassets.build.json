@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "MWOsn6lesyBh2vX9YuHtmdzzRXX1PaaHQwIL4X1q+vE=",
+  "Source": "GameOfThronesAPI",
+  "BasePath": "_content/GameOfThronesAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
