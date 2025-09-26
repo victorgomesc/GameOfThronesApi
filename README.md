@@ -94,8 +94,10 @@ curl -X POST "http://localhost:5283/api/Characters" \
     "houseId": 1,
     "fortalezaId": 1
   }'
+  ```
 Criar Casa
-bash
+
+```bash
 Copiar código
 curl -X POST "http://localhost:5283/api/Houses" \
   -H "Content-Type: application/json" \
@@ -105,8 +107,9 @@ curl -X POST "http://localhost:5283/api/Houses" \
     "lema": "Ours is the Fury",
     "strongholdId": null
   }'
+  ```
 Criar Fortaleza
-bash
+```bash
 Copiar código
 curl -X POST "http://localhost:5283/api/Strongholds" \
   -H "Content-Type: application/json" \
@@ -116,6 +119,7 @@ curl -X POST "http://localhost:5283/api/Strongholds" \
     "descricao": "Fortaleza ancestral da Casa Baratheon.",
     "houseId": 4
   }'
+  ```
 ⚠️ Sempre envie apenas IDs (houseId, fortalezaId, novaCasaId) em POST/PUT.
 O GET retorna DTOs já resolvendo nomes (Casa = "Stark", Fortaleza = "Winterfell").
 
@@ -124,11 +128,12 @@ Pré-requisitos
 .NET 8 SDK
 
 Instalar pacotes
-bash
+```bash
 Copiar código
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+```
 Configuração do Banco (appsettings.json)
 json
 Copiar código
