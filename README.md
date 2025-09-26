@@ -23,16 +23,13 @@
 
 ## 🏗️ Estrutura de Pastas
 
-GameOfThronesAPI/
-│── Controllers/ # Endpoints
-│── DTOs/ # Data Transfer Objects
-│── Models/ # Entidades
-│── Data/ # DbContext e Seed
-│── Program.cs
-│── appsettings.json
-
-markdown
-Copiar código
+GameOfThronesAPI/ <br>
+│── Controllers/ # Endpoints <br>
+│── DTOs/ # Data Transfer Objects <br>
+│── Models/ # Entidades <br>
+│── Data/ # DbContext e Seed <br>
+│── Program.cs <br>
+│── appsettings.json <br>
 
 ---
 
@@ -137,14 +134,17 @@ dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 Configuração do Banco (appsettings.json)
 json
 Copiar código
+```bash
 {
   "ConnectionStrings": {
     "DefaultConnection": "Data Source=gameofthrones.db"
   }
 }
+```
 Criar Banco
 bash
 Copiar código
+```bash
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 Rodar a API
@@ -152,6 +152,7 @@ bash
 Copiar código
 dotnet run
 Swagger: 👉 http://localhost:5283/swagger
+```
 
 🧰 DTOs
 A API retorna DTOs de leitura para evitar ciclos e simplificar resposta.
@@ -160,6 +161,7 @@ Exemplo CharacterDto:
 
 csharp
 Copiar código
+```bash
 public class CharacterDto {
   public int Id { get; set; }
   public string Nome { get; set; } = string.Empty;
@@ -171,6 +173,7 @@ public class CharacterDto {
   public string? NovaCasa { get; set; }
   public string? Fortaleza { get; set; }
 }
+```
 🔐 Futuro: Autenticação JWT
 Estrutura pronta para adicionar:
 
