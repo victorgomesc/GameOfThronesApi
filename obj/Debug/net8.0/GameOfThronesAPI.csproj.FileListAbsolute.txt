@@ -157,3 +157,4 @@
 /home/victor/www/my-projects/GameOfThronesAPI/bin/Debug/net8.0/runtimes/win-x64/native/e_sqlite3.dll
 /home/victor/www/my-projects/GameOfThronesAPI/bin/Debug/net8.0/runtimes/win-x86/native/e_sqlite3.dll
 /home/victor/www/my-projects/GameOfThronesAPI/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/home/victor/www/my-projects/GameOfThronesAPI/obj/Debug/net8.0/GameOfThronesAPI.sourcelink.json
