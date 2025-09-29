@@ -35,28 +35,17 @@ namespace GameOfThronesAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CharacterDto>> GetById(int id)
+        public async Task<ActionResult<Character>> GetById(int id)
         {
             var character = await _context.Characters
                 .Include(c => c.House)
                 .Include(c => c.NovaCasa)
                 .Include(c => c.Fortaleza)
-                .Where(c => c.Id == id)
-                .Select(c => new CharacterDto
-                {
-                    Id = c.Id,
-                    Nome = c.Nome,
-                    Titulo = c.Titulo,
-                    Status = c.Status,
-                    Sexo = c.Sexo,
-                    Descricao = c.Descricao,
-                    Casa = c.House != null ? c.House.Nome : null,
-                    NovaCasa = c.NovaCasa != null ? c.NovaCasa.Nome : null,
-                    Fortaleza = c.Fortaleza != null ? c.Fortaleza.Nome : null
-                })
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync(c => c.Id == id);
 
-            if (character == null) return NotFound();
+            if (character == null)
+                return NotFound();
+
             return character;
         }
 

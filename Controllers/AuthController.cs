@@ -52,6 +52,7 @@ namespace GameOfThronesAPI.Controllers
         public async Task<ActionResult<AuthResponseDto>> Login(UserLoginDto dto)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
+
             if (user == null || !PasswordHasher.Verify(dto.Password, user.PasswordHash))
                 return Unauthorized("Credenciais inválidas.");
 
@@ -65,4 +66,4 @@ namespace GameOfThronesAPI.Controllers
             };
         }
     }
-}
+    }
