@@ -72,8 +72,7 @@ namespace GameOfThronesAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, Character character)
         {
-            if (id != character.Id) return BadRequest();
-
+            character.Id = id; // força usar o id da rota
             _context.Entry(character).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return NoContent();
