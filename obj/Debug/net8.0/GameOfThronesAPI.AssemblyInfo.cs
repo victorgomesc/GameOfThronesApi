@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GameOfThronesAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a3023a6d44fa7f0af044e073c44d3af359bd8b7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc28fb2d683af6e9032b5f9a9621d240f5ed08cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("GameOfThronesAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GameOfThronesAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

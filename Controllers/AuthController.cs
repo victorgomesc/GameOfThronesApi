@@ -32,7 +32,7 @@ namespace GameOfThronesAPI.Controllers
                 Username = dto.Username,
                 Email = dto.Email,
                 PasswordHash = PasswordHasher.Hash(dto.Password),
-                Role = "User"
+                Role = string.IsNullOrEmpty(dto.Role) ? "User" : dto.Role
             };
 
             _context.Users.Add(user);

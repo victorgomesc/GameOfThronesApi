@@ -29,11 +29,10 @@ namespace GameOfThronesAPI.Data
                 .WithOne(c => c.House)
                 .HasForeignKey(c => c.HouseId);
 
-            // Ex.: Vassalos (self reference) 1–N
-            modelBuilder.Entity<House>()
-                .HasMany(h => h.Vassalos)
-                .WithOne(h => h.OverlordHouse)
-                .HasForeignKey(h => h.OverlordHouseId);
+             modelBuilder.Entity<House>()
+        .HasMany(h => h.Vassalos)               // 👈 lista de casas subordinadas
+        .WithOne(h => h.OverlordHouse)          // 👈 cada vassalo aponta para sua casa overlord
+        .HasForeignKey(h => h.OverlordHouseId);
 
             // 👇 (Opcional, mas recomendado) Regras para User
             modelBuilder.Entity<User>()

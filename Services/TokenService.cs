@@ -8,14 +8,9 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace GameOfThronesAPI.Services
 {
-    public class TokenService
+    public class TokenService(IOptions<JwtSettings> jwtSettings)
     {
-        private readonly JwtSettings _jwtSettings;
-
-        public TokenService(IOptions<JwtSettings> jwtSettings)
-        {
-            _jwtSettings = jwtSettings.Value;
-        }
+        private readonly JwtSettings _jwtSettings = jwtSettings.Value;
 
         public string GenerateToken(User user)
         {
