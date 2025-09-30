@@ -10,31 +10,27 @@ namespace GameOfThronesAPI.Data
         public DbSet<Character> Characters { get; set; }
         public DbSet<House> Houses { get; set; }
         public DbSet<Stronghold> Strongholds { get; set; }
-
-        // 👇 ADICIONE ESTA LINHA
+        public DbSet<Event> Events { get; set; }
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // --- Seus relacionamentos já existentes ---
-            // Ex.: House 1–1 Stronghold
+           
             modelBuilder.Entity<House>()
                 .HasOne(h => h.Stronghold)
                 .WithOne(s => s.House)
                 .HasForeignKey<Stronghold>(s => s.HouseId);
 
-            // Ex.: House 1–N Characters
             modelBuilder.Entity<House>()
                 .HasMany(h => h.Characters)
                 .WithOne(c => c.House)
                 .HasForeignKey(c => c.HouseId);
 
              modelBuilder.Entity<House>()
-        .HasMany(h => h.Vassalos)               // 👈 lista de casas subordinadas
-        .WithOne(h => h.OverlordHouse)          // 👈 cada vassalo aponta para sua casa overlord
+        .HasMany(h => h.Vassalos)             
+        .WithOne(h => h.OverlordHouse)          
         .HasForeignKey(h => h.OverlordHouseId);
 
-            // 👇 (Opcional, mas recomendado) Regras para User
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Email).IsUnique();
 
@@ -48,6 +44,14 @@ namespace GameOfThronesAPI.Data
                 .Property(u => u.Username).HasMaxLength(64).IsRequired();
 
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Event>()
+                .HasMany(e => e.Characters)
+                .WithMany();
+
+            modelBuilder.Entity<Event>()
+                .HasMany(e => e.Houses)
+                .WithMany();
         }
     }
 }

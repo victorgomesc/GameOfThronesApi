@@ -167,3 +167,5 @@
 /home/victor/www/my-projects/GameOfThronesAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/victor/www/my-projects/GameOfThronesAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
 /home/victor/www/my-projects/GameOfThronesAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/victor/www/my-projects/GameOfThronesAPI/bin/Debug/net8.0/Npgsql.dll
+/home/victor/www/my-projects/GameOfThronesAPI/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
