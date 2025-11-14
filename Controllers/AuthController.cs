@@ -10,16 +10,10 @@ namespace GameOfThronesAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AuthController : ControllerBase
+    public class AuthController(AppDbContext context, TokenService tokenService) : ControllerBase
     {
-        private readonly AppDbContext _context;
-        private readonly TokenService _tokenService;
-
-        public AuthController(AppDbContext context, TokenService tokenService)
-        {
-            _context = context;
-            _tokenService = tokenService;
-        }
+        private readonly AppDbContext _context = context;
+        private readonly TokenService _tokenService = tokenService;
 
         [HttpPost("register")]
         public async Task<ActionResult<AuthResponseDto>> Register(UserRegisterDto dto)

@@ -9,14 +9,9 @@ namespace GameOfThronesAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class HousesController : ControllerBase
+    public class HousesController(AppDbContext context) : ControllerBase
     {
-        private readonly AppDbContext _context;
-
-        public HousesController(AppDbContext context)
-        {
-            _context = context;
-        }
+        private readonly AppDbContext _context = context;
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<HouseDto>>> GetAll()
